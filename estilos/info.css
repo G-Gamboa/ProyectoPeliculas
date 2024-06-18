@@ -1,0 +1,128 @@
+.lead, .display-5{
+    color: var(---color_blanco) !important;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Opacidad ajustable */
+    z-index: 0;
+}
+
+.bg-header {
+    position: relative;
+    z-index: 0; /* Asegura que el contenido del encabezado esté detrás de la capa oscura */
+}
+
+.text-header {
+    position: relative; /* Asegura que el texto se posicione correctamente */
+    z-index: 2; /* Coloca el texto del encabezado delante de la capa oscura */
+}
+
+.img-header {
+    position: relative; /* Asegura que la imagen se posicione correctamente */
+    z-index: 2; /* Coloca la imagen del encabezado delante de la capa oscura */
+}
+
+dialog#modal {
+    display: none; /* Asegura que el modal esté oculto inicialmente */
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+    width: 80%;
+    max-width: 700px;
+    height: 80%;
+    max-height: 500px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 99;
+}
+dialog#modal.show {
+    display: block; /* Mostrar el modal cuando tenga la clase 'show' */
+}
+dialog#modal iframe {
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.comentario{
+    font-size: 1em !important;
+}
+
+.profile{
+    height: 70px;
+    width: auto;
+}
+
+.bar-container {
+    width: 300px;
+    height: 30px;
+    border: 1px solid var(---color_blanco);
+    margin-bottom: 20px;
+}
+
+.bar {
+    height: 100%;
+    background-color: var(---color_azul);
+}
+
+.bar-value {
+    position: relative;
+    top: -30px;
+    left: 0;
+}
+
+.grafico{
+    width: 250px; 
+    height: 250px;
+    margin: 0 auto;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+ a img{
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.5);
+ }
+
+.card-body{
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.cast{
+    background-color: var(---color_blanco);
+    color: var(---color_negro);
+}
+
+@media(max-width:900px){
+
+    .bg-header .banner {
+        margin-top: -32%;
+    }
+
+}
+
+
+
+
+
+

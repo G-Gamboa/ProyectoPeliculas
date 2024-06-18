@@ -1,0 +1,134 @@
+aside {
+    background-color: var(---color_blanco);
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-toggle{
+    background-color: var(---color_azul) !important;
+    border-color: var(---color_azul) !important;
+}
+
+main{
+    margin-top: 5%;
+    margin-left: 0;
+}
+
+.filtro{
+    text-align: center;
+}
+
+a{
+    color: var(---color_azul);
+    text-decoration: none;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 25px;
+    color: var(---color_azul);
+}
+
+ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0; 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list {
+    margin-right: 10px; 
+    margin-bottom: 10px;
+}
+
+.genre:hover {
+    background-color: var(---color_rojo) !important;
+}
+
+.container{
+    padding: 20px;
+}
+
+.row{
+    margin: 0 auto;
+}
+
+.card{
+    margin: 15px;
+    background-color: var(---color_amarillo) !important;
+    border: none;
+}
+ a img{
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.5);
+ }
+
+.card:hover{
+    transform: scale(1.1);
+ }
+.card-body{
+    background-color: var(---color_blanco);
+    text-shadow: 1px 1px 1px var(---color_amarillo);
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.5);
+}
+.buscar{
+    background-color: var(---color_amarillo) !important;
+    padding: 2%;
+}
+
+.buscar:hover{
+    background-color: var(---color_azul) !important;
+}
+
+.lado{
+    margin-top: 2%;
+    text-align: center;
+}
+
+
+.recta {
+    position: relative;
+    width: 100%;
+}
+
+.slider {
+    width: 100%;
+}
+
+#marker {
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media(max-width: 600px) {
+    aside {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+    main {
+        margin-top: 0;
+    }   
+}
+
+@media(max-width:900px){
+    aside{
+        position: relative;
+    }
+    main{
+        margin-top: 0;
+    }
+}
