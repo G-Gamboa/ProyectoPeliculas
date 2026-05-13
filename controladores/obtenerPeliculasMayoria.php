@@ -1,4 +1,7 @@
 <?php
+
+require_once __DIR__ . '/../config.php';
+
 function fetchDataAsync($total_pages) {
     $multiCurl = [];
     $results = [];
@@ -6,7 +9,6 @@ function fetchDataAsync($total_pages) {
 
     for ($page = 1; $page <= $total_pages; $page++) {
         $url = "https://api.themoviedb.org/3/movie/now_playing?language=es-gt&page=" . $page;
-
         $curl = curl_init();
         curl_setopt_array($curl, [
             CURLOPT_URL => $url,
@@ -17,11 +19,10 @@ function fetchDataAsync($total_pages) {
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => [
-                "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MGYxNDZhNzU0ZWYxN2E3OWNkYWE4MzVjYzc1NmYxMSIsInN1YiI6IjY2M2MzNGFjZTZmM2U5NGQ2YTExNzI3ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._prxOXrj-hUWxhJmF3pfM9V1aLwuQTGDkhvkxtcWQwE",
+                "Authorization: Bearer " . TMDB_TOKEN,
                 "accept: application/json"
             ],
         ]);
-
         curl_multi_add_handle($mh, $curl);
         $multiCurl[$page] = $curl;
     }
@@ -47,9 +48,5 @@ function fetchDataAsync($total_pages) {
 
 $total_pages = 100;
 $combined_results = fetchDataAsync($total_pages);
-
-// Guarda los resultados combinados en un archivo JSON dentro de un elemento 'results'
 $output = ['results' => $combined_results];
 file_put_contents('json/datosGeneralesPeliculas.json', json_encode($output, JSON_UNESCAPED_UNICODE));
-
-?>

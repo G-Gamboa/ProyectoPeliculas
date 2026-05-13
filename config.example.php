@@ -1,0 +1,3 @@
+<?php
+
+define('TMDB_TOKEN', 'YOUR_TMDB_API_TOKEN_HERE');
